@@ -1,0 +1,64 @@
+Cluster Summary
+Matthew Hrones
+CICS 397A
+11/22/2020
+
+####    COMMON BETWEEN SUMMARIES    ###
+
+The data I used for this homework was collected via an MTurk survey that asked
+respondents about their non-essential spending habits before and after the
+pandemic, along with the types of financial assistance, if any, they received.
+
+The survey asked essentially three questions, structured as follows
+
+
+Q1: How has your non-essential spending changed since the beginning of the
+    pandemic?
+
+    Much lower
+    Slightly lower
+    About the same
+    Slightly higher
+    Much Higher
+
+
+Q2: If your spending has decreased, why do you think that is?
+Q3: If your spending has increased, why do you think that is?
+
+
+Q4: What types, if any, of government/public financial assistance have you
+    received?
+
+    This question included answers such as Paycheck Protection Program, Pandemic
+    Unemployment Assistance, and University Aid that were categorized as
+    "Recurring Payments." The one time $1,200 Stimulus Check was categorized as
+    "One Time Payment." Respondents who received both Recurring and One-Time
+    payments were categorized as "Combo Payments." And, naturally, those who
+    didn't receive any financial assistance are denoted by "No Aid"
+
+####      END COMMON      ####
+
+
+The way the data was clustered as using a simple Kmeans clustering. I 'coded'
+the responses to Question 1, one-hot encoded all the answers for Questions 2 and
+3, and coded the different types of Aid as 0, 1, 3, and 5 for No Aid, One-Time,
+Recurring, and Combo, respectively.
+
+The clusters that were created centered either the types of aid received, the
+reported change in spending, or both.
+
+Two of the more interesting clusters generated were Clusters 0 and 1.
+
+Cluster 0 is entirely comprised of respondents who reported decreased spending
+to some degree. On top of that, well over 90% of those in that cluster either
+reported No Aid or One-time payment. This points to the conclusion that the
+people who only got the Stimulus Check, or nothing at all, were the people who
+decreased their spending during the pandemic. It seems that the One-time Payment
+was not enough to prevent a decrease in spending.
+
+On the other side of that same coin, we have Cluster 1. This cluster is entirely
+respondents that reported increased spending to some degree or reported no
+change. Within that, every single respondent in this cluster received Recurring
+Payments, or the One-time payment along with Recurring Payments. This shows that
+the Recurring Payments, as opposed to the One-time Payment, were enough to
+prevent decreases in spending. The output for this is included as "no_demos.txt"

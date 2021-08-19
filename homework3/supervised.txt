@@ -1,0 +1,68 @@
+Supervised Learning Summary
+Matthew Hrones
+CICS 397A
+11/22/2020
+
+####    COMMON BETWEEN SUMMARIES    ###
+
+The data I used for this homework was collected via an MTurk survey that asked
+respondents about their non-essential spending habits before and after the
+pandemic, along with the types of financial assistance, if any, they received.
+
+The survey asked essentially three questions, structured as follows
+
+
+Q1: How has your non-essential spending changed since the beginning of the
+    pandemic?
+
+    Much lower
+    Slightly lower
+    About the same
+    Slightly higher
+    Much Higher
+
+
+Q2: If your spending has decreased, why do you think that is?
+Q3: If your spending has increased, why do you think that is?
+
+
+Q4: What types, if any, of government/public financial assistance have you
+    received?
+
+    This question included answers such as Paycheck Protection Program, Pandemic
+    Unemployment Assistance, and University Aid that were categorized as
+    "Recurring Payments." The one time $1,200 Stimulus Check was categorized as
+    "One Time Payment." Respondents who received both Recurring and One-Time
+    payments were categorized as "Combo Payments." And, naturally, those who
+    didn't receive any financial assistance are denoted by "No Aid"
+
+####      END COMMON      ####
+
+The predictive task I was approaching was, given a respondent's reported change
+in spending and the perceived reason for that change, to predict what type of
+government financial assistance they received.
+
+For example, if a respondent reported a decrease in spending, it is less likely
+that they received a Recurring or Combo Payment, and more likely that they
+received the One-time Payment or No Aid. Within the category of decreased
+spending, someone who reported Financial Constraints as the reason were less
+likely to have received Recurring or Combo payments that those who reported
+Lockdown Orders as the reason.
+
+Unfortunately, the original prediction model was not very accurate. The final
+accuracy score was 0.311828. An issue in the dataset that I immediately realized
+was that there was no question asking for reasons for those who responded that
+they did were spending about the same. For those, I created another column of
+data for each respondent and set it to "none.
+
+However, after these poor results I realized I also had demographics data for
+the respondents I was analyzing. I then went on to include three other data
+points for the model; Age, Income, and Education. I included this data, in
+varying combinations and alone, to see if it would help train the model to make
+better predictions. And, after re-running the program, it did make the model
+more accurate!
+
+The new prediction rate was 0.4086022! Whether you state it as a 25% increase
+in accuracy, or a net increase 9.5 percent, adding this additional data helped
+the model predict what type(s) of aid they received. The output for this is
+included as "demos.txt"

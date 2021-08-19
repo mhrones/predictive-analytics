@@ -1,0 +1,22 @@
+My data set is a collection of the top 100 posts from the subreddit "r/politics."
+On reddit.com, subreddits serve as "community hubs" for a variety of different
+topics and interests. r/Politics is specifically about US Politics and Elections.
+
+The data in the CSV file include the Submission Title of each post, the URL, the Author, the
+"Score" (net likes vs dislikes) of each post, and the time each post was created.
+
+Some interesting things about this data set is that only a select few authors and
+URLs appear on the top posts of all time. In addition, a large percent of the Submission
+titles include the word "Trump."
+
+As for the plots, there are two plots attempting to show the distribution when it comes
+to author and URL, respectively. It was found that in both categories, there is a large
+disparity.
+
+Another plot is a Word Cloud, with the source text being the Submission Titles
+of the top 300 posts. This is meant to show what topics/words are being most upvoted
+on r/politics
+
+The final plot is a scatter plot showing varience in the score of the top posts of all time,
+along with a red-blue color coding to show whether or not a post's submission title
+contained the word trump.
